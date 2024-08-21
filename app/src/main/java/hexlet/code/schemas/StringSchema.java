@@ -3,7 +3,7 @@ package hexlet.code.schemas;
 public final class StringSchema extends BaseSchema {
 
     public StringSchema required() {
-        setRequired(true);
+        isValid(true);
         return this;
     }
 
