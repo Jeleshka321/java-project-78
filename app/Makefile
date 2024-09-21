@@ -1,16 +1,16 @@
-build:
-	make -C app build
-
 run-dist:
-	make -C run-dist
-
-test:
-	make -C app test
-
-report:
-	make -C app report
+	@./build/install/app/bin/app
 
 lint:
-	make -C app lint
+	@./gradlew checkstyleMain checkstyleTest
+
+test:
+	@./gradlew test
+
+build:
+	@./gradlew clean build
+
+report:
+	@./gradlew jacocoTestReport
 
 .PHONY: build
