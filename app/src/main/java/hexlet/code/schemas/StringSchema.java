@@ -1,24 +1,23 @@
 package hexlet.code.schemas;
 
-public final class StringSchema extends BaseSchema {
+public final class StringSchema extends BaseSchema<String> {
+
+    public StringSchema() {
+        addCondition("required", value -> !super.statusRequire || !(value == null || value == ("")));
+    }
 
     public StringSchema required() {
-        isValid(true);
+        setStatusRequire(true);
         return this;
     }
 
-    public StringSchema minLength(int minLength) {
-        addCondition(s -> ((String) s).length() >= minLength);
+    public StringSchema minLength(int length) {
+        addCondition("minLength", value -> value.length() > length);
         return this;
     }
 
-    public StringSchema contains(String contains) {
-        addCondition(s -> ((String) s).contains(contains));
+    public StringSchema contains(String search) {
+        addCondition("contains", value -> value.contains(search));
         return this;
-    }
-
-    @Override
-    public boolean checkIfNull(Object object) {
-        return object == null || ((String) object).isEmpty();
     }
 }
