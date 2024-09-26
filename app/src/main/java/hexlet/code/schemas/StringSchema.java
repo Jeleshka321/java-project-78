@@ -20,4 +20,5 @@ public final class StringSchema extends BaseSchema<String> {
         addCondition("contains", value -> value.contains(search));
         return this;
     }
+
 }
