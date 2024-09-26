@@ -17,9 +17,6 @@ repositories {
     mavenCentral()
 }
 
-checkstyle {
-    toolVersion = "10.13.0"
-}
 
 dependencies {
     implementation("org.apache.commons:commons-lang3:3.14.0")
