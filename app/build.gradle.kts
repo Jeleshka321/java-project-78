@@ -35,6 +35,7 @@ tasks.test {
         showStandardStreams = true
     }
 }
+
 application {
     mainClass = "hexlet.code.App"
 }
