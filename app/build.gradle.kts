@@ -17,6 +17,7 @@ repositories {
     mavenCentral()
 }
 
+application { mainClass.set("hexlet.code.Validator") }
 
 dependencies {
     implementation("org.apache.commons:commons-lang3:3.14.0")
