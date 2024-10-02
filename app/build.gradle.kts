@@ -2,6 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
+    application
     jacoco
     id("checkstyle")
     id("io.freefair.lombok") version "8.6"
@@ -18,6 +19,7 @@ repositories {
     mavenCentral()
 }
 
+application { mainClass.set("hexlet.code.Validator") }
 
 dependencies {
     implementation("org.apache.commons:commons-lang3:3.14.0")
