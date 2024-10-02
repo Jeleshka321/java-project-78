@@ -13,13 +13,13 @@ group = "hexlet.code"
 version = "1.0-SNAPSHOT"
 
 
-application { mainClass.set("hexlet.code.App") }
+
 
 repositories {
     mavenCentral()
 }
 
-application { mainClass.set("hexlet.code.Validator") }
+
 
 dependencies {
     implementation("org.apache.commons:commons-lang3:3.14.0")
