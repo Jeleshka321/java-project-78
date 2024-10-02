@@ -72,6 +72,19 @@ public class Tests {
     }
 
     @Test
+    public void testStringValidator() {
+        var validator = new Validator();
+        var schema = validator.string();
+        assertTrue(schema.isValid(""));
+        assertTrue(schema.isValid(null));
+        schema.required();
+        assertTrue(schema.isValid("what does the fox say"));
+        assertTrue(schema.isValid("hexlet"));
+        assertFalse(schema.isValid(""));
+        assertFalse(schema.isValid(null));
+    }
+
+    @Test
     public void numberValidatorRequired() {
         var validator = new Validator();
         var schema = validator.number();
